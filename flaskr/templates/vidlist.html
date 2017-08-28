@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}Video Player {% endblock %}
+
+{% block style %}
+   
+{% endblock %}
+{% block script %}
+
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Video Player" src="...">
+      </a>
+    </div>
+  </div>
+</nav>
+
+ <div class="panel panel-primary">
+      <div class="list-group">
+        <a href="#" class="list-group-item active">
+          Videos
+        </a>
+        {%if file_names %}
+        {%for name in file_names%}
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="/vidplayer/{{name}}">
+              <img class="media-object" src="{{ url_for('static', filename='images/video.png') }}" height="64" width="64" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{name}}</h4>
+            <h6>Video/mp4</h6 style="color:rgb(#808080);">  
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+
+
+{% endblock %}
